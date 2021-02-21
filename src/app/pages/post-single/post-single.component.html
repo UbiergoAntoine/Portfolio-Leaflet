@@ -1,0 +1,29 @@
+<div *ngIf="post"
+     fxLayout="column"
+     fxLayoutAlign="center center"
+     class="primary"
+     class="post-container">
+  <button mat-flat-button
+          class="back-button warn"
+          (click)="goToPosts()">
+    <mat-icon>keyboard_backspace</mat-icon>&nbsp; Retour
+  </button>
+  <div *ngIf="isAuth"
+       class="edit-buttons-container">
+    <button mat-flat-button
+            class="EditPost"
+            color="accent"
+            (click)="onEditPost(post.id)">
+      <mat-icon>edit</mat-icon>&nbsp; Editer le post
+    </button>
+    <button mat-flat-button
+            class="SupprPost"
+            color="warn"
+            (click)="onDeletePost(post)">
+      <mat-icon class="clear">delete</mat-icon> Effacer le post
+    </button></div>
+  <app-bandeau [post]="post"
+               class="primary"></app-bandeau>
+  <app-post-resume class="primary"
+                   [post]="post"></app-post-resume>
+</div>

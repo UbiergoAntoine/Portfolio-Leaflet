@@ -1,0 +1,53 @@
+<div class="mainContainer"
+     [ngClass]="{'dark-mode': darkMode}"
+     fxLayout="row"
+     fxLayoutAlign="center start">
+  <div fxFlex></div>
+  <div fxFlex="1200px"
+       fxLayout="column"
+       class="posts-container"
+       fxLayoutGap="64px">
+    <app-post-card [post]="firstPost">
+      <a mat-flat-button
+         color="accent"
+         class="more"
+         routerLink="/posts/view">Lire plus...</a>
+    </app-post-card>
+    <div fxLayout="row"
+         fxLayoutGap="64px">
+      <app-post-card fxFlex="50%"
+                     [post]="secondPost"
+                     elevation="4"></app-post-card>
+      <app-post-card fxFlex="50%"
+                     [post]="thirdPost"
+                     elevation="4"></app-post-card>
+    </div>
+    <div *ngFor="let post of otherPosts">
+      <app-bandeau [post]="post"
+                   showMore="true"></app-bandeau>
+      <app-post-resume [post]="post"></app-post-resume>
+    </div>
+    <mat-accordion *ngIf="otherPosts">
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <h4>
+              <mat-icon class="warn">warning</mat-icon> Posts assignés à des thèmes inexistants
+            </h4>
+          </mat-panel-title>
+          <mat-panel-description *ngIf="panelOpenState === true"> Assignez-leur de nouveaux themes </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngFor="let post of postsWhithoutTheme">
+          <app-bandeau [post]="post"
+                       showMore="true"></app-bandeau>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <!-- <div *ngIf="noResult">No result</div> -->
+  </div>
+  <app-filters fxFlex
+               class="postFilters"
+               [theme]="theme"
+               [post]="post"></app-filters>
+</div>

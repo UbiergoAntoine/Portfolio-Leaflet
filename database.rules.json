@@ -1,0 +1,6 @@
+{
+  "rules": {
+    ".read": "auth === auth",
+    ".write": "auth === auth"
+  }
+}

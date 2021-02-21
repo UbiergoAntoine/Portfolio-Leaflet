@@ -1,0 +1,90 @@
+<!--Le Menu-->
+<div fxLayout="column"
+     fxLayoutAlign="start center"
+     class="main-container-filters">
+  <button *ngIf="anyFilterSet"
+          class="reset-all-filters"
+          color="warn"
+          mat-button
+          (click)="resetAllFilters($event)">
+    <mat-icon>all_out</mat-icon>Réinitialiser les filtres
+  </button>
+  <mat-form-field class="FormsMenu filters-form"
+                  appearance="outline">
+    <mat-label for="theme">
+      <mat-icon>list</mat-icon>&nbsp; Thème
+    </mat-label>
+    <mat-select [(ngModel)]="postService.themeFilter"
+                class="FormsMenu"
+                matSelect
+                [(value)]="postService.themeFilter"
+                placeholder="Choisissez votre thème">
+      <mat-select-trigger>{{postService.themeFilter}}</mat-select-trigger>
+      <mat-option>
+        <mat-icon class="warn">all_out</mat-icon>&nbsp;<span class="warn">--- Réinitialiser --- </span>
+      </mat-option>
+      <mat-option [value]="theme.name"
+                  class="accent"
+                  *ngFor="let theme of postService.themes">
+        <mat-icon class="theme-icon-list">{{theme.icon}}</mat-icon>{{theme.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <!--Liste de chips contenant les mots-clés-->
+  <mat-form-field class="FormsMenu  filters-form"
+                  appearance="outline">
+    <mat-label>
+      <mat-icon>palette</mat-icon>&nbsp; Mots-clés
+    </mat-label>
+    <input class="search"
+           matInput
+           [(ngModel)]="postService.keyWordsFilter"
+           (keyup)="searchKeyWords($event)"
+           placeholder="Cherchez un titre"
+           [matAutocomplete]="autoKeyWords">
+    <button mat-button
+            matSuffix
+            color="accent"
+            mat-icon-button
+            aria-label="Clear"
+            (click)="resetFilter($event)">
+      <mat-icon mat-icon>close</mat-icon>
+    </button>
+    <mat-autocomplete (optionSelected)="selectKeyWords($event.option.value)"
+                      #autoKeyWords="matAutocomplete">
+      <mat-option *ngFor="let keyword of allKeyWords"
+                  [value]="keyword.name">
+        <span>{{ keyword.name }}</span>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <!--Autocomplete titres des posts-->
+  <mat-form-field class="FormsMenu  filters-form"
+                  appearance="outline">
+    <mat-label>
+      <mat-icon>title</mat-icon>&nbsp; Titre
+    </mat-label>
+    <input class="search"
+           matInput
+           [(ngModel)]="postService.titreFilter"
+           (keyup)="searchTitle($event)"
+           placeholder="Cherchez un titre"
+           [matAutocomplete]="autoTitle">
+    <button mat-button
+            matSuffix
+            mat-icon-button
+            *ngIf="postService.titreFilter"
+            color="accent"
+            aria-label="Clear"
+            (click)="resetTitleFilter($event)">
+      <mat-icon>close</mat-icon>
+    </button>
+    <mat-autocomplete (optionSelected)="selectTitle($event.option.value)"
+                      #autoTitle="matAutocomplete">
+      <mat-option *ngFor="let post of postsTitleAutocomplete"
+                  [value]="post.titre">
+        <span>{{ post.titre }}</span>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</div>

@@ -1,0 +1,12 @@
+<svg id="deck-black-18dp" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="Groupe_1566" data-name="Groupe 1566">
+    <rect id="Rectangle_682" data-name="Rectangle 682" width="24" height="24" fill="none"/>
+  </g>
+  <g id="Groupe_1568" data-name="Groupe 1568">
+    <g id="Groupe_1567" data-name="Groupe 1567">
+      <path id="Tracé_2144" data-name="Tracé 2144" d="M22,9,12,2,2,9h9V22h2V9Z" fill="red"/>
+      <path id="Tracé_2145" data-name="Tracé 2145" d="M4.14,12l-1.96.37L3,16.74V22H5l.02-4H7v4H9V16H4.9Z" fill="red"/>
+      <path id="Tracé_2146" data-name="Tracé 2146" d="M19.1,16H15v6h2V18h1.98L19,22h2V16.74l.82-4.37L19.86,12Z" fill="red"/>
+    </g>
+  </g>
+</svg>

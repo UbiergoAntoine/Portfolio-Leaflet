@@ -1,0 +1,24 @@
+.theme-form-container {
+  height: 800px;
+  width: 960px;
+}
+
+.theme-grid-form {
+  width: 960px;
+  height: auto;
+  margin: 8px 8px 24px 8px;
+}
+
+.new-theme-input {
+  width: 300px !important;
+}
+
+.new-theme {
+  height: fit-content;
+}
+
+.delete-theme {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}

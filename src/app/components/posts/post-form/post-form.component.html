@@ -1,0 +1,120 @@
+<div fxLayout="column"
+     class="post-edit-container"
+     fxLayoutGap="8px">
+  <!--Le form de l'Edit avec des ngModel-->
+  <mat-form-field appearance="outline">
+    <mat-label for="theme">
+      <mat-icon>list</mat-icon>&nbsp; Thème
+    </mat-label>
+    <mat-select matSelect
+                class="form-control"
+                [(ngModel)]="post.theme"
+                placeholder="Choisissez votre thème">
+      <mat-select-trigger>{{selected}}</mat-select-trigger>
+      <mat-option>
+        <mat-icon>all_out</mat-icon>&nbsp;--- Tous les themes ---
+      </mat-option>
+      <mat-option [value]="post.theme"
+                  *ngFor="let theme of postService.themes">
+        <mat-icon>{{theme.icon}}</mat-icon>{{theme.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div fxLayout="row">
+    <mat-form-field appearance="outline"
+                    class="post-edit-form">
+      <mat-label for="titre">
+        <mat-icon>title</mat-icon>&nbsp; Titre
+      </mat-label>
+      <input type="text"
+             id="titre"
+             matInput
+             [(ngModel)]="post.titre">
+    </mat-form-field>
+  </div>
+  <div fxLayout="row">
+    <mat-form-field appearance="outline"
+                    class="post-edit-form">
+      <mat-label for="contenu">
+        <mat-icon>title</mat-icon>&nbsp; Contenu
+      </mat-label>
+      <textarea type="text"
+                id="contenu"
+                matInput
+                cdkTextareaAutosize
+                #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="5"
+                [(ngModel)]="post.contenu"></textarea>
+    </mat-form-field>
+  </div>
+  <div fxLayout="row">
+    <mat-form-field appearance="outline"
+                    class="post-edit-form">
+      <mat-label for="keyWords">
+        <mat-icon>title</mat-icon>&nbsp; Mots-clés
+      </mat-label>
+      <mat-chip-list #chipList>
+        <mat-chip *ngFor="let keyWord of post.keyWords"
+                  [removable]="removable"
+                  [selectable]="selectable"
+                  (removed)="remove(keyWord)"> {{keyWord.name}} <mat-icon matChipRemove
+                    *ngIf="removable">cancel</mat-icon>
+        </mat-chip>
+        <input placeholder="Nouveau mot-clé"
+               [matChipInputFor]="chipList"
+               [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+               [matChipInputAddOnBlur]="addOnBlur"
+               (matChipInputTokenEnd)="add($event)">
+      </mat-chip-list>
+    </mat-form-field>
+    <!-- le stackblitz-->
+    <mat-form-field appearance="outline"
+                    class="post-edit-form">
+      <mat-label for="stackBlitz">
+        <mat-icon>title</mat-icon>&nbsp; stackBlitz
+      </mat-label>
+      <input type="text"
+             id="stackBlitz"
+             matInput
+             [(ngModel)]="post.stackBlitz" />
+    </mat-form-field>
+  </div>
+  <div fxLayout="row">
+    <mat-form-field appearance="outline"
+                    class="post-edit-form">
+      <mat-label for="lien">
+        <mat-icon>title</mat-icon>&nbsp; Lien
+      </mat-label>
+      <textarea type="text"
+                id="lien"
+                cdkTextareaAutosize
+                #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="2"
+                matInput
+                [(ngModel)]="post.lien"></textarea>
+    </mat-form-field>
+  </div>
+  <div fxLayout="row">
+    <mat-form-field appearance="outline"
+                    class="post-edit-form">
+      <mat-label for="adress">
+        <mat-icon>title</mat-icon>&nbsp; Adress
+      </mat-label>
+      <textarea type="text"
+                id="adress"
+                matInput
+                cdkTextareaAutosize
+                #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="5"
+                [(ngModel)]="post.adress"></textarea>
+    </mat-form-field>
+  </div>
+  <button mat-button
+          id="enregistrer"
+          class="accent"
+          (click)="postService.updatePost(post)"
+          routerLink="/posts">
+    <!-- [disabled]="fileIsUploading" -->
+    <mat-icon>save_alt</mat-icon>&nbsp; Enregistrer
+  </button>
+</div>

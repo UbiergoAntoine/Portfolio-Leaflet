@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="391" viewBox="0 0 1200 391">
+  <g id="Groupe_1538" data-name="Groupe 1538" transform="translate(-360 -2494)">
+    <g id="Groupe_1534" data-name="Groupe 1534" transform="translate(360 2494)">
+      <g id="Rectangle_602" data-name="Rectangle 602" fill="#fff" stroke="#e2e2e2" stroke-width="1">
+        <rect width="384" height="391" rx="4" stroke="none"/>
+        <rect x="0.5" y="0.5" width="383" height="390" rx="3.5" fill="none"/>
+      </g>
+      <g id="Groupe_1532" data-name="Groupe 1532" transform="translate(24 106)">
+        <path id="Tracé_1199" data-name="Tracé 1199" d="M11.99,2A10,10,0,1,0,22,12,10,10,0,0,0,11.99,2Z" transform="translate(-2 -2)" fill="#e2e2e2"/>
+      </g>
+      <g id="Groupe_1540" data-name="Groupe 1540" transform="translate(24 142)">
+        <path id="Tracé_1199-2" data-name="Tracé 1199" d="M11.99,2A10,10,0,1,0,22,12,10,10,0,0,0,11.99,2Z" transform="translate(-2 -2)" fill="#e2e2e2"/>
+      </g>
+      <g id="Groupe_1541" data-name="Groupe 1541" transform="translate(24 178)">
+        <path id="Tracé_1199-3" data-name="Tracé 1199" d="M11.99,2A10,10,0,1,0,22,12,10,10,0,0,0,11.99,2Z" transform="translate(-2 -2)" fill="#e2e2e2"/>
+      </g>
+      <g id="Groupe_1542" data-name="Groupe 1542" transform="translate(24 214)">
+        <path id="Tracé_1199-4" data-name="Tracé 1199" d="M11.99,2A10,10,0,1,0,22,12,10,10,0,0,0,11.99,2Z" transform="translate(-2 -2)" fill="#e2e2e2"/>
+      </g>
+      <g id="Groupe_1543" data-name="Groupe 1543" transform="translate(24 250)">
+        <path id="Tracé_1199-5" data-name="Tracé 1199" d="M11.99,2A10,10,0,1,0,22,12,10,10,0,0,0,11.99,2Z" transform="translate(-2 -2)" fill="#e2e2e2"/>
+      </g>
+      <g id="Groupe_1544" data-name="Groupe 1544" transform="translate(24 286)">
+        <path id="Tracé_1199-6" data-name="Tracé 1199" d="M11.99,2A10,10,0,1,0,22,12,10,10,0,0,0,11.99,2Z" transform="translate(-2 -2)" fill="#e2e2e2"/>
+      </g>
+      <g id="Groupe_1545" data-name="Groupe 1545" transform="translate(24 322)">
+        <path id="Tracé_1199-7" data-name="Tracé 1199" d="M11.99,2A10,10,0,1,0,22,12,10,10,0,0,0,11.99,2Z" transform="translate(-2 -2)" fill="#e2e2e2"/>
+      </g>
+      <rect id="Rectangle_668" data-name="Rectangle 668" width="286" height="20" transform="translate(60 106)" fill="#e2e2e2"/>
+      <rect id="Rectangle_669" data-name="Rectangle 669" width="286" height="20" transform="translate(60 142)" fill="#e2e2e2"/>
+      <rect id="Rectangle_670" data-name="Rectangle 670" width="286" height="20" transform="translate(60 178)" fill="#e2e2e2"/>
+      <rect id="Rectangle_672" data-name="Rectangle 672" width="286" height="20" transform="translate(60 214)" fill="#e2e2e2"/>
+      <rect id="Rectangle_673" data-name="Rectangle 673" width="286" height="20" transform="translate(60 250)" fill="#e2e2e2"/>
+      <rect id="Rectangle_674" data-name="Rectangle 674" width="286" height="20" transform="translate(60 286)" fill="#e2e2e2"/>
+      <rect id="Rectangle_675" data-name="Rectangle 675" width="286" height="20" transform="translate(60 322)" fill="#e2e2e2"/>
+      <rect id="Rectangle_671" data-name="Rectangle 671" width="172" height="20" transform="translate(117 36)" fill="#e2e2e2"/>
+    </g>
+    <g id="Rectangle_602-2" data-name="Rectangle 602" transform="translate(768 2494)" fill="#fff" stroke="#e2e2e2" stroke-width="1">
+      <rect width="384" height="391" rx="4" stroke="none"/>
+      <rect x="0.5" y="0.5" width="383" height="390" rx="3.5" fill="none"/>
+    </g>
+    <g id="Rectangle_602-3" data-name="Rectangle 602" transform="translate(1176 2494)" fill="#fff" stroke="#e2e2e2" stroke-width="1">
+      <rect width="384" height="391" rx="4" stroke="none"/>
+      <rect x="0.5" y="0.5" width="383" height="390" rx="3.5" fill="none"/>
+    </g>
+    <path id="Tracé_2111" data-name="Tracé 2111" d="M167,97.571H97.571V167H74.429V97.571H5V74.429H74.429V5H97.571V74.429H167Z" transform="translate(874.165 2603.657)" fill="#e2e2e2"/>
+    <path id="Tracé_2120" data-name="Tracé 2120" d="M167,97.571H97.571V167H74.429V97.571H5V74.429H74.429V5H97.571V74.429H167Z" transform="translate(1282.165 2603.657)" fill="#e2e2e2"/>
+  </g>
+</svg>

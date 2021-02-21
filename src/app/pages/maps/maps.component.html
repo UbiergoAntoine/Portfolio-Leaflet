@@ -1,0 +1,40 @@
+<div>maps OK <div>map form with adress</div>
+  <h5>Dernières adress : </h5>
+  <mat-nav-list class="nav-list"
+                cdkDropList
+                cdkDropListOrientation="vertical"
+                (cdkDropListDropped)="dropadresse($event)">
+    <mat-list-item class="items-list"
+                   fxLayout="row"
+                   fxLayoutAlign="space-between start"
+                   *ngFor="let adresse of adressService.sortedadresses; let first = first; let last = last;trackBy: ngForTrackByFn"
+                   [cdkDragData]="adresse"
+                   cdkDrag>
+      <div fxLayout="row"
+           (click)="onSelectAdresse(adresse)"
+           class="item-content">
+        <button mat-card-avatar
+                mat-flat-button
+                class="adresse-icon mat-chip">
+          <span> {{ adresse.icon }}</span></button>
+        <p class="adresse-date"
+           *ngIf="adresse.prettyDate">{{adresse.prettyDate}}</p>
+        <markdown [data]="adresse.adresse"
+                  ngPreserveWhitespaces
+                  class="adresse-content"></markdown>
+      </div>
+      <div fxLayout="row">
+        <button mat-icon-button
+                color="warn"
+                class="effacer"
+                (click)="onDeleteadresse(adresse)">
+          <mat-icon>close</mat-icon>
+        </button>
+        <mat-icon class="drop-handler"
+                  cdkDragHandle>swap_vert</mat-icon>
+      </div>
+      <mat-divider *ngIf="!last"></mat-divider>
+    </mat-list-item>
+  </mat-nav-list>
+  <app-leaflet [adress]="adresse"></app-leaflet>
+</div>

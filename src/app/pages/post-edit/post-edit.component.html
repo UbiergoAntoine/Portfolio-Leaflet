@@ -1,0 +1,4 @@
+<div *ngIf="post">
+  <h2 class="edit-title accent">Editer le post : {{post.titre}}</h2>
+  <app-post-form [post]="post"></app-post-form>
+</div>

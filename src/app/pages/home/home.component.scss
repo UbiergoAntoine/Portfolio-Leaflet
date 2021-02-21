@@ -1,0 +1,47 @@
+:host {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+}
+
+.posts-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.bandeau {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+
+  .bandeau-image {
+    position: absolute;
+    opacity: 0.5;
+    transition: opacity 400ms ease-in-out;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &:hover {
+    .bandeau-image {
+      opacity: 1;
+    }
+  }
+
+  .bandeau-content {
+    z-index: 1;
+    text-align: center;
+  }
+}
+
+.mainContainer {
+  margin-top: 150px;
+}

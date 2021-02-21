@@ -1,0 +1,20 @@
+:host {
+  width: 100%;
+  display: block;
+  position: relative;
+}
+
+.mat-grid-list-theme {
+  padding: 10px;
+  margin: 10px;
+}
+
+.theme-grid-list {
+  width: 960px !important;
+}
+
+.add-theme-button {
+  position: absolute;
+  top: 10px;
+  left: 120px;
+}

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="391" viewBox="0 0 1200 391">
+  <g id="Groupe_1548" data-name="Groupe 1548" transform="translate(-360 -2117)">
+    <g id="Composant_7_1" data-name="Composant 7 – 1" transform="translate(360 2117)">
+      <g id="Groupe_1539" data-name="Groupe 1539" transform="translate(-360 -2073)">
+        <g id="Composant_6_1" data-name="Composant 6 – 1" transform="translate(360 2189)">
+          <g id="Groupe_1537" data-name="Groupe 1537" transform="translate(-360 -2189)">
+            <g id="Ellipse_17" data-name="Ellipse 17" transform="translate(360 2189)" fill="#fff" stroke="#ff9800" stroke-width="1">
+              <circle cx="80" cy="80" r="80" stroke="none"/>
+              <circle cx="80" cy="80" r="79.5" fill="none"/>
+            </g>
+            <g id="Rectangle_665" data-name="Rectangle 665" transform="translate(544 2189)" fill="#fff" stroke="#ff9800" stroke-width="1">
+              <rect width="1016" height="45" rx="4" stroke="none"/>
+              <rect x="0.5" y="0.5" width="1015" height="44" rx="3.5" fill="none"/>
+            </g>
+            <g id="Rectangle_666" data-name="Rectangle 666" transform="translate(544 2258)" fill="#fff" stroke="#ff9800" stroke-width="1">
+              <rect width="1016" height="91" rx="4" stroke="none"/>
+              <rect x="0.5" y="0.5" width="1015" height="90" rx="3.5" fill="none"/>
+            </g>
+            <g id="Groupe_1547" data-name="Groupe 1547" transform="translate(344 2173)">
+              <g id="Groupe_1503" data-name="Groupe 1503">
+                <circle id="Ellipse_11" data-name="Ellipse 11" cx="4" cy="4" r="4" transform="translate(92 64)" fill="#ff9800"/>
+                <path id="Tracé_1228" data-name="Tracé 1228" d="M103.438,97,124,144,110.205,97H120V95H109.618l-5.37-18.3A11.979,11.979,0,0,0,98,56.18V48H94v8.18a11.978,11.978,0,0,0-6.215,20.551L82.412,95H72v2h9.824L68,144,88.563,97H95v3h2V97ZM96,60a8,8,0,1,1-8,8A8,8,0,0,1,96,60ZM89.438,95,96,80l6.563,15H97V92H95v3Z" fill="#ff9800"/>
+              </g>
+              <g id="Groupe_1504" data-name="Groupe 1504">
+                <circle id="Ellipse_12" data-name="Ellipse 12" cx="4" cy="4" r="4" transform="translate(92 64)" fill="#ff9800"/>
+                <path id="Tracé_1229" data-name="Tracé 1229" d="M103.438,97,124,144,110.205,97H120V95H109.618l-5.37-18.3A11.979,11.979,0,0,0,98,56.18V48H94v8.18a11.978,11.978,0,0,0-6.215,20.551L82.412,95H72v2h9.824L68,144,88.563,97H95v3h2V97ZM96,60a8,8,0,1,1-8,8A8,8,0,0,1,96,60ZM89.438,95,96,80l6.563,15H97V92H95v3Z" fill="#ff9800"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <rect id="Rectangle_667" data-name="Rectangle 667" width="1200" height="391" rx="4" transform="translate(360 2073)" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,32 @@
+<div fxLayout="row wrap">
+  <mat-card class="single-post"
+            mat-card
+            fxFlex="31%"
+            *ngFor="let post of postsComputed"
+            (click)="onViewPost(post.id)">
+    <mat-card class="imageContainer">
+      <img mat-card-image
+           *ngIf="post.photo"
+           [src]="post.photo" />
+    </mat-card>
+    <mat-card-title class="contenuPost"
+                    *ngIf="post.titre">{{post.titre}}</mat-card-title>
+    <mat-card-subtitle class="contenuPost"
+                       *ngIf="post.theme"> {{post.theme}} </mat-card-subtitle>
+    <mat-chip-list id="chips"
+                   *ngFor="let keyWord of post.keyWords"
+                   class="contenuPost">
+      <mat-chip> {{keyWord.name}}</mat-chip>
+    </mat-chip-list>
+    <mat-card-content class="contenuPost"
+                      *ngIf="post.lien"
+                      id="carteLiens"> {{post.lien}} </mat-card-content>
+    <mat-card-content *ngIf="post.contenu"
+                      class="contenuPost"> {{post.contenu}} </mat-card-content>
+    <mat-card-content id="carteLiens"
+                      *ngIf="post.stackBlitz"
+                      class="contenuPost">{{post.stackBlitz}}</mat-card-content>
+    <mat-card class="adressesPost"
+              *ngIf="post.adress"> {{post.adress}} </mat-card>
+  </mat-card>
+</div>

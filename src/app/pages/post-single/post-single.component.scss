@@ -1,0 +1,43 @@
+.postContainer {
+  margin-right: 200px;
+  margin-left: 200px;
+  padding-top: 0;
+}
+
+.imageContainer {
+  display: flex;
+  padding: 0 !important;
+}
+
+.back-button {
+  position: absolute;
+  left: 24px;
+  top: 228px;
+}
+
+mat-card-title {
+  margin-top: 3% !important;
+}
+
+
+.contenuPost {
+  background-color: #6D87C5;
+}
+
+mat-card-content {
+  padding: 2%;
+}
+
+.postContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.EditPost,
+.SupprPost {
+  margin: 8px;
+}
+
+.edit-buttons-container {
+  margin-bottom: 24px;
+}

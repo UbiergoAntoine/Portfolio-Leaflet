@@ -1,0 +1,26 @@
+<div class="theme-page-container"
+     fxLayout="column"
+     fxLayoutAlign="start center">
+    <!-- <div class="text-right"> -->
+    <!-- </div> -->
+    <h4 class="primary">THEME PAGE</h4>
+    <p *ngIf="userSigned"
+       class="primary">Cliquez sur "Editer les thèmes" pour en ajouter ou en supprimer</p>
+    <button mat-flat-button
+            class="add-theme-button"
+            color="accent"
+            *ngIf="userSigned"
+            (click)="openThemeForm()">
+        <mat-icon>edit</mat-icon>&nbsp; Editer les Thèmes &nbsp;
+    </button>
+    <mat-grid-list class="theme-grid-list "
+                   cols="3"
+                   gutterSize="24px"
+                   rowHeight="140px">
+        <mat-grid-tile *ngFor="let theme of allThemes"
+                       class="theme-grid-tile hover-bs"
+                       (click)="selectTheme(theme.name)">
+            <app-theme [theme]="theme"></app-theme>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <h2>
+      <mat-icon>accessibility_new</mat-icon>&nbsp; Créer un compte
+    </h2>
+    <form [formGroup]="signupForm"
+          (ngSubmit)="onSubmit()">
+      <!--Le ngSubmit qui appele la méthode onSubmit-->
+      <div class="form-group">
+        <mat-form-field appearance="outline">
+          <mat-label for="email">
+            <mat-icon>mail</mat-icon>&nbsp; Adresse mail
+          </mat-label>
+          <input matInput
+                 type="text"
+                 id="email"
+                 class="form-control"
+                 formControlName="email"
+                 placeholder="Sasissez une adresse mail valide">
+          <!--les formcontrols qui vérifient que les champs soient remplis-->
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field appearance="outline">
+          <mat-label for="password">
+            <mat-icon>vpn_key</mat-icon>&nbsp; Mot de passe
+          </mat-label>
+          <input matInput
+                 type="password"
+                 id="password"
+                 class="form-control"
+                 formControlName="password"
+                 placeholder="Saisissez votre mot de passe">
+        </mat-form-field>
+      </div>
+      <button mat-button
+              class="btn btn-primary"
+              type="submit"
+              [disabled]="signupForm.invalid">
+        <mat-icon>add</mat-icon>&nbsp; Créer mon compte
+      </button>
+    </form>
+    <p class="text-danger">{{ errorMessage }}</p>
+    <!--Si infos invalides, error message rendu par firebase lui-même !-->
+  </div>
+</div>

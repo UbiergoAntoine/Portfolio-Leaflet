@@ -1,0 +1,107 @@
+@import './theme/dark-mode.scss';
+
+$light-primary: mat-palette($mat-indigo, A200, A100, A400);
+$light-accent: mat-palette($mat-blue, A200, A100, A400);
+$light-warn: mat-palette($mat-orange, A200, A100, A400);
+$primary: mat-color($light-primary);
+$accent: mat-color($light-accent);
+$warn: mat-color($light-warn);
+$light-theme: mat-light-theme($light-primary, $light-accent, $light-warn);
+@include angular-material-theme($light-theme);
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+
+}
+
+.non-draggable {
+  user-select: none !important;
+  -moz-user-select: none !important;
+  -webkit-user-drag: none !important;
+  -webkit-user-select: none !important;
+  -ms-user-select: none !important;
+}
+
+.mat-list-item-content {
+  width: inherit !important;
+}
+
+.mat-dialog-container {
+  width: 80vw !important;
+  height: 80vh !important;
+}
+
+.items-list {
+  height: auto !important;
+
+  .mat-list-item-content {
+    align-items: start !important;
+  }
+}
+
+.mat-focused,
+.mat-form-field-label {
+  color: $primary;
+}
+
+.mat-form-field-ripple {
+  background-color: $primary;
+}
+
+input,
+textarea {
+  color: $accent;
+}
+
+.mat-chip {
+  background-color: $accent !important;
+}
+
+.mat-form-field-underline {
+  background-color: $primary;
+}
+
+.primary {
+  color: $primary;
+}
+
+.accent {
+  color: $accent;
+}
+
+.warn {
+  color: $warn;
+}
+
+.mat-flat-button {
+  border-radius: 20px !important;
+
+
+}
+
+.connectionButtons button:hover {
+  box-shadow: 0 4px 4px 4px rgba(0, 0, 0, .2), 0 4px 8px 0 rgba(0, 0, 0, .14), 0 8px 8px 0 rgba(0, 0, 0, .12) !important;
+  transition: .4s cubic-bezier(.25, .8, .25, 1), box-shadow 280ms cubic-bezier(.4, 0, .2, 1);
+}
+
+
+
+.theme-grid-tile {
+  border: 2px solid $accent;
+  border-radius: 16px;
+  background-color: #E6E6E6;
+
+
+}
+
+.hover-bs:hover {
+  box-shadow: 0 4px 4px 4px rgba(0, 0, 0, .2), 0 4px 8px 0 rgba(0, 0, 0, .14), 0 8px 8px 0 rgba(0, 0, 0, .12) !important;
+  transform: translate3d(0, 0, 0);
+  transition: .4s cubic-bezier(.25, .8, .25, 1), box-shadow 280ms cubic-bezier(.4, 0, .2, 1);
+}

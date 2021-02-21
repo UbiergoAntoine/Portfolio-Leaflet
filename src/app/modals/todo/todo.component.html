@@ -1,0 +1,80 @@
+<div class="todoCompo"
+     fxLayout="column">
+  <!--Le tableau de la TodoList-->
+  <mat-grid-list cols="2"
+                 rowHeight="100%">
+    <mat-grid-tile>
+      <div class="container-todo">
+        <h5 class="grid-title">Travailler, toujours travailler ...</h5>
+        <mat-divider class="divider accent"></mat-divider>
+        <mat-nav-list class="mat-list-todo">
+          <mat-list-item class="items-list"
+                         fxLayout="row"
+                         fxLayoutAlign="center start"
+                         *ngFor="let todo of todoListComputed">
+            <p class="content">{{todo.todo}}</p>
+            <mat-checkbox [(ngModel)]="todo.done"
+                          (change)="todoService.updateTodoList(todo)"
+                          class="valider">Fait ! </mat-checkbox>
+            <button mat-icon-button
+                    class="effacer"
+                    color="warn"
+                    (click)="onDeleteTodoItem(todo)">
+              <mat-icon>close</mat-icon> &nbsp; Effacer
+            </button>
+          </mat-list-item>
+        </mat-nav-list>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="container-todo">
+        <h5 class="grid-title">Travail terminé !</h5>
+        <mat-divider class="divider"></mat-divider>
+        <mat-nav-list class="mat-list-todo">
+          <mat-list-item class="items-list"
+                         *ngFor="let todo of doneListComputed">
+            <p class="content">{{todo.todo}}</p>
+            <button mat-icon-button
+                    color="warn"
+                    class="effacer"
+                    (click)="onDeleteTodoItem(todo)">
+              <mat-icon>close</mat-icon> &nbsp; Effacer
+            </button>
+          </mat-list-item>
+        </mat-nav-list>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-card fxLayout="column"
+            fxLayoutAlign="space-around center">
+    <form class="todoFormulaire"
+          fxLayout="row"
+          fxLayoutAlign="center center"
+          fxLayoutGap="24px"
+          [formGroup]="TodoListForm"
+          (ngSubmit)="onSaveTodoList()">
+      <mat-form-field class="todo-textarea  accent"
+                      appearance="outline">
+        <mat-label for="todo">
+          <mat-icon>format_list_bulleted</mat-icon>&nbsp; Encore du travail ?
+        </mat-label>
+        <textarea type="text"
+                  id="todo"
+                  class="accent"
+                  formControlName="todo"
+                  matInput
+                  cdkTextareaAutosize
+                  #autosize="cdkTextareaAutosize"
+                  cdkAutosizeMinRows="2"
+                  placeholder="Très bien ..."
+                  #box
+                  (keyup.enter)="onEnter(box.value)"></textarea>
+      </mat-form-field>
+      <button mat-flat-button
+              color="accent"
+              id="newThingsTodo"
+              [disabled]="TodoListForm.invalid"
+              type="submit"> Au Travail ! </button>
+    </form>
+  </mat-card>
+</div>

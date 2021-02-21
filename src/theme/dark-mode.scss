@@ -1,0 +1,79 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$dark-primary: mat-palette($mat-grey, A100, A50, A200);
+$dark-accent: mat-palette($mat-amber, A200, A100, A400);
+$dark-warn: mat-palette($mat-red, A200, A100, A400);
+$primary: mat-color($dark-primary);
+$accent: mat-color($dark-accent);
+$warn: mat-color($dark-warn);
+$dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+.dark-mode {
+  @include angular-material-theme($dark-theme);
+
+  .mat-focused,
+  .mat-form-field-label {
+    color: $accent !important;
+  }
+
+  .mat-form-field-underline {
+    background-color: $accent !important;
+  }
+
+  .mat-form-field-ripple {
+    background-color: $accent !important;
+  }
+
+  .mat-flat-button {
+    &:hover {
+      background-color: rgb(255, 245, 157) !important;
+    }
+  }
+
+  .SupprPost {
+    &:hover {
+      background-color: rgb(239, 83, 80) !important;
+    }
+  }
+
+  input,
+  textarea {
+    color: $accent !important;
+  }
+
+  .mat-chip {
+    background-color: $accent !important;
+    color: $primary !important;
+
+
+    &:hover {
+      background-color: rgb(255, 238, 88) !important;
+    }
+  }
+
+  .primary {
+    color: $primary;
+  }
+
+  .accent {
+    color: $accent;
+  }
+
+  .warn {
+    color: $warn;
+  }
+
+  .theme-grid-tile {
+    border: 2px solid $accent;
+  }
+
+  .hover-bs {
+    background-color: #24242499 !important;
+  }
+
+  .hover-bs:hover {
+    transition: 0.6s;
+    background-color: #5a595999 !important;
+  }
+}

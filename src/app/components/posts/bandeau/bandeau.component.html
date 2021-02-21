@@ -1,0 +1,28 @@
+<div class="bandeau"
+     fxLayout="column"
+     fxLayoutAlign="center center">
+     <div class="bandeau-image"
+          [ngStyle]="{
+   backgroundImage: 'url(' + post.photo + ');'
+  }">
+     </div>
+     <div class="bandeau-content">
+          <h2 class="titre">{{post.titre}} | {{post.theme}}</h2>
+          <h3 class="date">{{post.postDate}}</h3>
+          <markdown [data]="post.lien"></markdown>
+          <mat-chip-list class="chipListPost"
+                         id="chips"
+                         fxLayout="row"
+                         fxLayoutAlign="center center">
+               <mat-chip class="chipsPost"
+                         mat-chip
+                         *ngFor="let keyWord of post.keyWords"> {{keyWord.name}}</mat-chip>
+          </mat-chip-list>
+          <a mat-flat-button
+             *ngIf="showMore"
+             color="accent"
+             class="more"
+             routerLink="/posts/view/{{post.id}}">Lire plus...</a>
+     </div>
+     <ng-content></ng-content>
+</div>

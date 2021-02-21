@@ -1,0 +1,262 @@
+:host {
+  max-width: 1200px;
+  width: 100%;
+  display: block;
+  position: relative;
+}
+
+.yellow-icon {
+  color: #ff9800;
+}
+
+.leaflet-layout {
+  height: 465px;
+  width: 100%;
+}
+
+.div-agm-map {
+  padding: 0;
+}
+
+agm-map {
+  height: 100%;
+}
+
+.activated-icon {
+  color: #ff9800;
+}
+
+.no-activated-icon {
+  color: #001e4c;
+}
+
+.icon-poi {
+  font-size: 34px;
+}
+
+.leaflet-map {
+  height: 100%;
+  width: 100%;
+}
+
+.map-card {
+  padding: 0;
+  height: 355px !important;
+}
+
+.map-card-title {
+  padding: 8px;
+  padding-top: 15px;
+  max-height: 64px;
+}
+
+.travel-time {
+  font-size: 16px !important;
+}
+
+.map-card-content {
+  padding: 24px;
+  font-size: 16px !important;
+}
+
+.adresses {
+  font-size: 12px;
+  margin: 0px !important;
+}
+
+.adress-divider {
+  border: 1px solid #E2E2E2;
+  margin: 24px -24px 24px -24px !important;
+  width: 588px !important;
+  position: relative !important;
+}
+
+.map-legend {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.trajet-header,
+.interest-header {
+  padding-right: 24px;
+  border: 1px solid #E2E2E2;
+  max-height: 64px;
+  min-height: 64px;
+}
+
+.valid-adress {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 20px;
+  font-size: 20px !important;
+  max-height: 20px;
+  margin-left: 10px !important;
+}
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+  background-color: #FF9800;
+}
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+  background-color: #E2E2E2;
+}
+
+.lil-section-file {
+  width: 48px;
+  height: 48px;
+  border-radius: 80px;
+  border: 1px solid #FF9800;
+  overflow: none;
+}
+
+.travel-time-title {
+  font-size: 20px;
+  color: #425066;
+  font-weight: 500;
+  margin: 0px;
+}
+
+// MAJ 05/2020
+
+::ng-deep .travels-toggle {
+
+  .toggle-text {
+    color: #001e4c;
+  }
+
+  .mat-slide-toggle-thumb {
+    background-color: #001e4c;
+  }
+
+  .mat-slide-toggle-bar {
+    background-color: #001e4c;
+  }
+}
+
+.slide-toggle-text {
+  color: #FF9800;
+}
+
+::ng-deep .slide-toggle-color {
+  .mat-slide-toggle-thumb {
+    background-color: #FF9800 !important;
+    /*replace with your color*/
+  }
+
+  .mat-slide-toggle-bar {
+    background-color: #97651C !important;
+    /*replace with your color*/
+  }
+}
+
+.transport-icon {
+  font-size: 24px !important;
+  color: #001e4c !important;
+  margin-right: 12px;
+}
+
+.main-points-container {
+  height: 112px;
+  width: 100%;
+}
+
+.poi-divider {
+  position: absolute;
+  top: 178px;
+  width: 588px;
+}
+
+.active-childs {
+  display: none !important;
+}
+
+
+.childicon-container {
+  top: 200px;
+  position: absolute;
+  left: 24px;
+}
+
+.main-icons {
+  font-size: 24px !important;
+  min-height: 24px !important;
+  min-width: 24px !important;
+  // background-color: #FFFFFF;
+  // &:hover {
+  //   font-size: 64px !important;
+  //   min-height: 64px !important;
+  //   min-width: 64px !important;
+  // }
+}
+
+// .selected {
+//   font-size: 64px !important;
+//   min-width: 64px !important;
+//   min-height: 64px !important;
+// }
+.poi-container {
+  height: 355px;
+}
+
+// CLASSES POI
+
+
+.label-icon {
+  min-width: 64px !important;
+  min-height: 64px !important;
+  border-radius: 50%;
+  border-color: none;
+
+  .colored-icon {
+    display: none;
+  }
+
+  &:hover {
+    border: 2px solid;
+
+    .colored-icon {
+      display: block;
+    }
+
+    .grey-icon {
+      display: none;
+    }
+  }
+
+}
+
+.selected-main-item {
+  border: 2px solid;
+
+  .colored-icon {
+    display: block;
+  }
+
+  .grey-icon {
+    display: none;
+  }
+
+}
+
+// .selected-main-item {
+//   font-size: 64px !important;
+//   min-height: 64px !important;
+//   min-width: 64px !important;
+// }
+
+.travel-icons {
+  margin-top: 8px;
+}
+
+.child-icon {
+  padding-right: 8px;
+}
+
+::ng-deep .leaflet-marker-icon.activated-icon {
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  padding: 2px !important;
+  border: 1px solid black;
+}

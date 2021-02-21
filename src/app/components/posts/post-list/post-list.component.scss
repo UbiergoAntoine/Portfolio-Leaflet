@@ -1,0 +1,55 @@
+.imageContainer {
+  display: flex;
+  padding: 0 !important;
+  background-color: #7C9EF2;
+}
+
+.adressesPost {
+  background-color: #3B63C4;
+  height: 100px;
+  margin: 3%;
+  margin-bottom: 3% !important
+}
+
+.mat-card-subtitle:not(:first-child),
+.mat-card-title:not(:first-child) {
+  margin-top: 4% !important
+}
+
+.contenuPost {
+  padding: 6% !important;
+  overflow: auto;
+}
+
+#carteLiens {
+  color: #3B63C4 !important
+}
+
+.mat-chip.mat-standard-chip {
+  background-color: #3B63C4;
+  color: whitesmoke;
+  font-weight: bold;
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+.imageContainer img {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  vertical-align: center;
+}
+
+img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.single-post {
+  margin: auto;
+  height: fit-content !important;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  padding: 0px !important;
+}

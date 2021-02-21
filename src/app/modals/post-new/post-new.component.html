@@ -1,0 +1,127 @@
+<div fxLayout="column"
+     class="post-new-container"
+     fxLayoutAlign="center center">
+  <h4>Enregistrer un nouveau post</h4>
+  <form [formGroup]="postForm"
+        fxLayout="column"
+        fxLayoutGap="16px"
+        class="new-post-form"
+        (ngSubmit)="onSavePost()">
+    <div fxLayout="row"
+         fxLayout.lt-md="column"
+         fxLayoutGap="16px">
+      <div fxFlex="50"
+           fxLayoutGap="16px">
+        <mat-form-field appearance="outline">
+          <mat-label for="theme">
+            <mat-icon>list</mat-icon>&nbsp; Thème
+          </mat-label>
+          <mat-select matSelect
+                      class="form-control"
+                      formControlName="theme"
+                      [(value)]="selected"
+                      placeholder="Choisissez votre thème">
+            <mat-select-trigger>{{selected}}</mat-select-trigger>
+            <mat-option>
+              <mat-icon>all_out</mat-icon>&nbsp;--- Tous les themes ---
+            </mat-option>
+            <mat-option [value]="theme.name"
+                        *ngFor="let theme of postService.themes">
+              <mat-icon>{{theme.icon}}</mat-icon>{{theme.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="example-chip-list"
+                        appearance="outline">
+          <mat-chip-list #chipList
+                         aria-label="Fruit selection">
+            <mat-chip *ngFor="let keyWord of keyWords"
+                      [selectable]="selectable"
+                      [removable]="removable"
+                      (removed)="remove(keyWord)"> {{keyWord.name}} <mat-icon matChipRemove
+                        *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+            <input placeholder="Nouveau mot-clé"
+                   formControlName="keyWords"
+                   [matChipInputFor]="chipList"
+                   [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                   [matChipInputAddOnBlur]="addOnBlur"
+                   (matChipInputTokenEnd)="add($event)">
+          </mat-chip-list>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label for="titre">
+            <mat-icon>title</mat-icon>&nbsp; Titre
+          </mat-label>
+          <input type="text"
+                 id="titre"
+                 class="form-control"
+                 formControlName="titre"
+                 matInput
+                 placeholder="Écrivez le titre">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label for="contenu">
+            <mat-icon>title</mat-icon>&nbsp; Contenu
+          </mat-label>
+          <textarea type="text"
+                    id="contenu"
+                    class="form-control"
+                    formControlName="contenu"
+                    matInput
+                    placeholder="Écrivez le contenu"></textarea>
+        </mat-form-field>
+      </div>
+      <div fxFlex="50"
+           fxLayoutGap="16px">
+        <mat-form-field appearance="outline">
+          <mat-label for="lien">
+            <mat-icon>title</mat-icon>&nbsp; Lien
+          </mat-label>
+          <textarea type="text"
+                    id="lien"
+                    class="form-control"
+                    formControlName="lien"
+                    matInput
+                    placeholder="Écrivez des liens"></textarea>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label for="adress">
+            <mat-icon>title</mat-icon>&nbsp; Adress
+          </mat-label>
+          <textarea type="text"
+                    id="adress"
+                    class="form-control"
+                    formControlName="adress"
+                    matInput
+                    placeholder="Écrivez la adresse"></textarea>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label for="stackBlitz">
+            <mat-icon>title</mat-icon>&nbsp; stackBlitz
+          </mat-label>
+          <textarea type="text"
+                    id="stackBlitz"
+                    class="form-control"
+                    formControlName="stackBlitz"
+                    matInput
+                    placeholder="Met le lien du StackBlitz"></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+    <mat-card class="cardPhoto"
+              fxLayoutAlign="center center">
+      <mat-icon>photo_camera</mat-icon>&nbsp; Ajouter une photo <input type="file"
+             (change)="detectFiles($event)"
+             class="form-control"
+             accept="image/*">
+      <p *ngIf="fileUploaded">Fichier chargé !</p>
+    </mat-card>
+    <button mat-flat-button
+            class="submit-button"
+            [disabled]="postForm.invalid || fileIsUploading"
+            type="submit">
+      <mat-icon class="warn">save_alt</mat-icon>&nbsp; Enregistrer
+    </button>
+  </form>
+</div>

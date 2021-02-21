@@ -1,0 +1,48 @@
+<div class="theme-form-container">
+  <div class="container-themes">
+    <h5 color="accent">Liste des themes</h5>
+    <mat-grid-list class="theme-grid-form"
+                   cols="3"
+                   gutterSize="24px"
+                   rowHeight="140px">
+      <mat-grid-tile *ngFor="let theme of allThemes"
+                     class="theme-grid-tile hover-bs">
+        <app-theme [theme]="theme"></app-theme>
+        <button mat-icon-button
+                class="delete-theme warn"
+                (click)="deleteTheme(theme)">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <form [formGroup]="themesListForm"
+        (ngSubmit)="saveThemesList()"
+        fxLayout="column"
+        fxLayoutAlign="center center">
+    <mat-card class="formBlocThemes"
+              fxLayout="row"
+              fxLayout="center center">
+      <mat-card-content>
+        <!-- [(ngModel)]="theme.name" -->
+        <mat-form-field appearance="outline"
+                        color="accent"
+                        class="new-theme-input">
+          <input matInput
+                 formControlName="name"
+                 placeholder="Entrez un nouveau Theme">
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions class="new-theme"
+                        fxLayout="column"
+                        fxLayoutAlign="end">
+        <button mat-button
+                id="newTheme"
+                color="primary"
+                type="submit">
+          <mat-icon>add</mat-icon>&nbsp; Nouveau theme
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>

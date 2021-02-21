@@ -1,0 +1,49 @@
+.confirmation-container {
+  padding: 0px 0px 16px 0px;
+
+  .mat-title {
+    padding: 16px;
+    background-color: #181A4F;
+    color: #FFFFFF;
+    text-align: center;
+  }
+
+  .buttons {
+    padding: 0px 16px;
+  }
+
+  mat-icon {
+    margin-right: 8px;
+  }
+
+  .cancel-button {
+    border: 1px solid #181A4F;
+    color: #181A4F;
+    background-color: #FFFFFF;
+    min-width: 140px;
+
+    &:hover {
+      color: #FFFFFF;
+      background-color: #181A4F;
+      box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
+    }
+  }
+
+  .confirm-button {
+    background-color: #FFFFFF;
+    color: #FF0000;
+    border: 1px solid red;
+    min-width: 140px;
+
+    &:hover {
+      color: #FFFFFF;
+      background-color: #FF0000;
+      // en place : 8
+      // mat-elevation 4
+      // box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2),
+      //   0 4px 5px 0 rgba(0, 0, 0, .14),
+      //   0 1px 10px 0 rgba(0, 0, 0, .12)
+      box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
+    }
+  }
+}

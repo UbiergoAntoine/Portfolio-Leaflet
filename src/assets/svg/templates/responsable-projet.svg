@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="391" viewBox="0 0 1200 391">
+  <g id="Groupe_1539" data-name="Groupe 1539" transform="translate(-360 -2073)">
+    <g id="Groupe_1537" data-name="Groupe 1537">
+      <g id="Ellipse_17" data-name="Ellipse 17" transform="translate(360 2189)" fill="#fff" stroke="#E2E2E2" stroke-width="1">
+        <circle cx="80" cy="80" r="80" stroke="E2E2E2"/>
+        <circle cx="80" cy="80" r="79.5" fill="none"/>
+      </g>
+      <g id="Rectangle_665" data-name="Rectangle 665" transform="translate(544 2189)" fill="#fff" stroke="#E2E2E2" stroke-width="1">
+        <rect width="1016" height="45" rx="4" stroke="none"/>
+        <rect x="0.5" y="0.5" width="1015" height="44" rx="3.5" fill="none"/>
+      </g>
+      <g id="Rectangle_666" data-name="Rectangle 666" transform="translate(544 2258)" fill="#fff" stroke="#E2E2E2" stroke-width="1">
+        <rect width="1016" height="91" rx="4" stroke="none"/>
+        <rect x="0.5" y="0.5" width="1015" height="90" rx="3.5" fill="none"/>
+      </g>
+      <path id="Tracé_1252" data-name="Tracé 1252" d="M50,22.2V3H2V89.4H98V22.2ZM21.2,79.8H11.6V70.2h9.6Zm0-19.2H11.6V51h9.6Zm0-19.2H11.6V31.8h9.6Zm0-19.2H11.6V12.6h9.6ZM40.4,79.8H30.8V70.2h9.6Zm0-19.2H30.8V51h9.6Zm0-19.2H30.8V31.8h9.6Zm0-19.2H30.8V12.6h9.6Zm48,57.6H50V70.2h9.6V60.6H50V51h9.6V41.4H50V31.8H88.4ZM78.8,41.4H69.2V51h9.6Zm0,19.2H69.2v9.6h9.6Z" transform="translate(390.5 2223.256)" fill="#E2E2E2"/>
+    </g>
+    <rect id="Rectangle_667" data-name="Rectangle 667" width="1200" height="391" rx="4" transform="translate(360 2073)" fill="none"/>
+  </g>
+</svg>

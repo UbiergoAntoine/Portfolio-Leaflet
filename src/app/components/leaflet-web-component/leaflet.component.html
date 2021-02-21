@@ -1,0 +1,184 @@
+<div>Leaflet component</div>
+<div *ngIf="currentAdress">
+     <h5>Adresse Sélectionnée</h5> {{currentAdress.adresse}}
+</div>
+<div fxLayout="column"
+     fxLayoutAlign="center center"
+     fxLayoutGap="24px">
+     <div fxFlex="50"
+          class="leaflet-layout">
+          <div leaflet
+               class="leaflet-map"
+               [leafletOptions]="leafletOptions"
+               [leafletBaseLayers]="baseLayers"
+               [leafletLayersControlOptions]="layersControlOptions"
+               (leafletMapReady)="onMapReady($event)">
+          </div>
+     </div>
+     <div class="map-legend"
+          fxFlex="50"
+          fxLayout="row"
+          fxLayoutAlign="center start"
+          fxLayoutGap="24px">
+          <mat-card fxFlex="50"
+                    class="map-card"
+                    fxLayout="column"
+                    style="margin-bottom:10px">
+               <mat-card-header class="trajet-header"
+                                fxLayout="row"
+                                fxLayoutAlign="space-between center">
+                    <mat-card-title class="map-card-title">
+                         <div fxLayout="row"
+                              fxLayoutAlign="start center"
+                              fxLayoutGap="16px">
+                              <div class="lil-section-file"
+                                   fxLayout="column"
+                                   fxLayoutAlign="center center">
+                                   <img alt=""
+                                        src="../../../assets/svg/Tracé 1208.svg" />
+                              </div>
+                              <h4 class="travel-time-title">Temps de trajet</h4>
+                         </div>
+                    </mat-card-title>
+                    <mat-slide-toggle class="travels-toggle"
+                                      [ngClass]="{'slide-toggle-color' : timeMeasure}"
+                                      [(ngModel)]="timeMeasure">
+                         <span class="toggle-text"
+                               [ngClass]="{'slide-toggle-text' : timeMeasure}">{{toggleText}}</span>
+                    </mat-slide-toggle>
+               </mat-card-header>
+               <mat-card-content class="map-card-content travel-time">
+                    <mat-form-field style="width:100%">
+                         <input #searchPlace
+                                (input)="updateTempAdress($event, '1')"
+                                [matAutocomplete]="auto"
+                                autocorrect="off"
+                                autocapitalize="words"
+                                spellcheck="off"
+                                type="text"
+                                matInput
+                                [ngModel]="tempAddress1.address"
+                                name="address"
+                                placeholder="Veuillez renseigner une adresse"
+                                (click)="$event.stopPropagation()" />
+                         <mat-spinner diameter="20"
+                                      *ngIf="adress1Searching"
+                                      matSuffix>
+                         </mat-spinner>
+                         <mat-icon matSuffix
+                                   class="valid-adress"
+                                   *ngIf="adress1Valid">checked</mat-icon>
+                         <mat-autocomplete #auto="matAutocomplete"
+                                           (optionSelected)="onAdressSelected($event, '1')">
+                              <mat-option *ngFor="let place of placesSearch"
+                                          [value]="place"> {{place.display_name}} </mat-option>
+                         </mat-autocomplete>
+                    </mat-form-field>
+                    <div fxLayout="row"
+                         fxLayoutAlign="space-between center"
+                         class="travel-icons">
+                         <div *ngFor="let transportMethod of transportMethods1"
+                              fxLayout="row"
+                              fxLayoutAlign="center center">
+                              <mat-icon class="transport-icon">{{transportMethod.matIcon}}</mat-icon> {{timeMeasure ? transportMethod.timeTravel : transportMethod.distanceTravel}}
+                         </div>
+                    </div>
+                    <mat-divider class="adress-divider"></mat-divider>
+                    <div class="second-adress">
+                         <mat-form-field style="width:100%">
+                              <input #searchPlace2
+                                     (input)="updateTempAdress($event, '2')"
+                                     [matAutocomplete]="auto2"
+                                     autocorrect="off"
+                                     autocapitalize="words"
+                                     spellcheck="off"
+                                     type="text"
+                                     matInput
+                                     [ngModel]="tempAddress2.address"
+                                     name="adresse"
+                                     placeholder="Veuillez renseigner une adresse" />
+                              <mat-spinner diameter="20"
+                                           *ngIf="adress2Searching"
+                                           matSuffix>
+                              </mat-spinner>
+                              <mat-icon matSuffix
+                                        class="valid-adress"
+                                        *ngIf="adress2Valid">checked</mat-icon>
+                              <mat-autocomplete #auto2="matAutocomplete"
+                                                (optionSelected)="onAdressSelected($event, '2')">
+                                   <mat-option *ngFor="let place of placesSearch2"
+                                               [value]="place"> {{place.display_name}} </mat-option>
+                              </mat-autocomplete>
+                         </mat-form-field>
+                         <div fxLayout="row"
+                              fxLayoutAlign="space-between center"
+                              class="travel-icons">
+                              <div *ngFor="let transportMethod of transportMethods2"
+                                   fxLayout="row"
+                                   fxLayoutAlign="center center">
+                                   <mat-icon class="transport-icon">{{transportMethod.matIcon}}</mat-icon> {{timeMeasure ? transportMethod.timeTravel : transportMethod.distanceTravel}}
+                              </div>
+                         </div>
+                    </div>
+               </mat-card-content>
+          </mat-card>
+          <mat-card class="map-card poi-container"
+                    fxFlex="50">
+               <mat-card-header class="interest-header"
+                                fxLayout="row"
+                                fxLayoutAlign="space-between center">
+                    <mat-card-title class="map-card-title">
+                         <div fxLayout="row"
+                              fxLayoutAlign="start center"
+                              fxLayoutGap="16px">
+                              <div class="lil-section-file"
+                                   fxLayout="column"
+                                   fxLayoutAlign="center center">
+                                   <img alt=""
+                                        src="../../../assets/svg/Tracé 1209.svg" />
+                              </div>
+                              <h4 class="travel-time-title">Points d'intérêts</h4>
+                         </div>
+                    </mat-card-title>
+               </mat-card-header>
+               <mat-card-content>
+                    <div fxLayout="row"
+                         class="main-points-container"
+                         fxLayoutAlign="center center"
+                         fxLayoutGap="20px">
+                         <mat-divider class="poi-divider"></mat-divider>
+                         <div *ngFor="let item of listPOIs"
+                              [ngClass]="{ 'selected' : item === selectedItem}"
+                              (click)="selectPOI(item)"
+                              class="main-icons-container">
+                              <label class="label-icon"
+                                     fxLayout="row"
+                                     fxLayoutAlign="center center"
+                                     [ngClass]="{ 'selected-main-item' : item === selectedItem}"
+                                     [ngStyle]="{ 'border-color':  item.color }">
+                                   <img [src]="item.greyIconUrl"
+                                        class="grey-icon no-draggable">
+                                   <img [src]="item.iconUrl"
+                                        class="colored-icon no-draggable" />
+                              </label>
+                              <div class="childicon-container"
+                                   fxLayout="column"
+                                   fxLayoutAlign="start start"
+                                   fxLayoutGap="16px"
+                                   *ngIf="item === selectedItem">
+                                   <div *ngFor="let child of item.children"
+                                        [ngClass]="child.class">
+                                        <label fxLayout="row"
+                                               fxLayoutAlign="center center">
+                                             <img [src]="child.iconUrl"
+                                                  class="child-icon no-draggable" />
+                                             <div> {{child.val}} : {{child.count}} </div>
+                                        </label>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </mat-card-content>
+          </mat-card>
+     </div>
+</div>
